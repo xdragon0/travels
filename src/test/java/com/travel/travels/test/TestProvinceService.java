@@ -3,6 +3,7 @@ package com.travel.travels.test;
 import com.travel.travels.TravelsApplication;
 import com.travel.travels.entity.Province;
 import com.travel.travels.service.ProvinceService;
+import com.travel.travels.service.ShareWebService;
 import lombok.experimental.Accessors;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,6 +24,9 @@ public class TestProvinceService {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    @Autowired
+    private ShareWebService shareWebService;
+
     @Test
     public void testfindall(){
         provinceService.findByPage(1,5);
@@ -31,6 +35,11 @@ public class TestProvinceService {
     @Test
     public void test1(){
         stringRedisTemplate.opsForValue().set("name","张三");
+    }
+
+    @Test
+    public void test2(){
+        System.out.print(shareWebService.findByCurrentPage(2));
     }
 
 }

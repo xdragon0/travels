@@ -15,4 +15,6 @@ public interface BaseDao<T,K> {
     List<T> findByName(@Param("name") String name);
     Integer findTotals();
 
+    List<T> findByCurrentPage(@Param("currentPage") Integer currentPage);
+
 }

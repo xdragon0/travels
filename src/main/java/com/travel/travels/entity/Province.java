@@ -13,7 +13,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @ToString
 @Accessors(chain = true)  //chain 若为true，则setter方法返回当前对象
-public class Province implements Serializable {
+//implements Serializable
+public class Province {
     private String id;
     private String name;
     private String tags;
